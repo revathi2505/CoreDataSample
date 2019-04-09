@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="itemId" attributeType="String" syncable="YES"/>
+        <attribute name="itemName" attributeType="String" syncable="YES"/>
+        <attribute name="status" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="parentRoom" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="roomItems" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES" codeGenerationType="class">
+        <attribute name="floorId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roomId" attributeType="String" syncable="YES"/>
+        <attribute name="roomName" attributeType="String" syncable="YES"/>
+        <relationship name="roomItems" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="parentRoom" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Room" positionX="46.58984375" positionY="77.94921875" width="128" height="103"/>
+        <element name="Item" positionX="243.87890625" positionY="161.69921875" width="128" height="118"/>
+    </elements>
+</model>
